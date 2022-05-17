@@ -20,6 +20,7 @@ class _AppWidgetState extends State<AppWidget> {
           onPrimary: const Color(0xFFFFFFE6),
           secondary: const Color(0xff8764B8),
           tertiary: const Color(0xffE5E5E5),
+          onTertiary: const Color(0xff5C5A5A),
           background: const Color(0xff000000),
         ),
         inputDecorationTheme: const InputDecorationTheme(
@@ -50,6 +51,15 @@ class _AppWidgetState extends State<AppWidget> {
             fontSize: 24,
             fontWeight: FontWeight.bold,
           ),
+        ),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: const Color(0xff171717),
+          selectedIconTheme: const IconThemeData(color: Color(0xffFFFFFF)),
+          unselectedIconTheme: const IconThemeData(color: Color(0xff929292)),
+          selectedLabelStyle: const TextStyle(fontSize: 12),
+          selectedItemColor: const Color(0xffE5E5E5),
+          unselectedItemColor: const Color(0xffE5E5E5).withOpacity(.7),
+          unselectedLabelStyle: const TextStyle(fontSize: 12),
         ),
       ),
       title: 'Challenger',
