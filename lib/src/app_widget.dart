@@ -46,12 +46,23 @@ class _AppWidgetState extends State<AppWidget> {
             fontSize: 14,
             color: Color(0xFFFFFFE6),
           ),
+          bodySmall: TextStyle(
+            fontSize: 11,
+            fontWeight: FontWeight.w300,
+            color: Color(0xFFFFFFE6),
+          ),
           labelMedium: TextStyle(
             color: Color(0xffFFFFFF),
             fontSize: 24,
             fontWeight: FontWeight.bold,
           ),
+          titleMedium: TextStyle(
+            color: Color(0xff8764B8),
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
         ),
+        cardColor: const Color(0xff5C5A5A).withOpacity(.9),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: const Color(0xff171717),
           selectedIconTheme: const IconThemeData(color: Color(0xffFFFFFF)),
