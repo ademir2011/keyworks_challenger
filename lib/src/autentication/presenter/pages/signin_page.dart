@@ -73,7 +73,7 @@ class _SigninPageState extends State<SigninPage> {
                     ElevatedButton(
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
-                          Modular.to.navigate('/template/home_news/');
+                          Modular.to.navigate('/template/home-news/');
                         }
                       },
                       child: Padding(

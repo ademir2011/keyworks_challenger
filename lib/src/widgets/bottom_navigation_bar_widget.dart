@@ -23,15 +23,24 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
       onTap: widget.onTap,
       items: [
         BottomNavigationBarItem(
-          icon: BottomNavigationBarItemIconWidget(isSelected: widget.index == PageEnum.home.index),
+          icon: BottomNavigationBarItemIconWidget(
+            isSelected: widget.index == PageEnum.home.index,
+            icon: Icons.home,
+          ),
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: BottomNavigationBarItemIconWidget(isSelected: widget.index == PageEnum.maps.index),
+          icon: BottomNavigationBarItemIconWidget(
+            isSelected: widget.index == PageEnum.maps.index,
+            icon: Icons.place,
+          ),
           label: 'Mapa',
         ),
         BottomNavigationBarItem(
-          icon: BottomNavigationBarItemIconWidget(isSelected: widget.index == PageEnum.configurations.index),
+          icon: BottomNavigationBarItemIconWidget(
+            isSelected: widget.index == PageEnum.configurations.index,
+            icon: Icons.settings,
+          ),
           label: 'Configurações',
         ),
       ],

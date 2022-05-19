@@ -23,10 +23,17 @@ class _AppWidgetState extends State<AppWidget> {
           onTertiary: const Color(0xff5C5A5A),
           background: const Color(0xff000000),
         ),
+        toggleableActiveColor: const Color(0xff8764B8),
         inputDecorationTheme: const InputDecorationTheme(
           border: OutlineInputBorder(),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(width: 2, color: Color(0xffFFFFFF)),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              width: 2,
+              color: Color(0xff8764B8),
+            ),
           ),
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
@@ -44,12 +51,12 @@ class _AppWidgetState extends State<AppWidget> {
           ),
           bodyMedium: TextStyle(
             fontSize: 14,
-            color: Color(0xFFFFFFE6),
+            color: Color(0xFFFFFFFF),
           ),
           bodySmall: TextStyle(
-            fontSize: 11,
+            fontSize: 12,
             fontWeight: FontWeight.w300,
-            color: Color(0xFFFFFFE6),
+            color: Color(0xFFFFFFFF),
           ),
           labelMedium: TextStyle(
             color: Color(0xffFFFFFF),

@@ -20,6 +20,10 @@ enum PageEnum {
   }
 }
 
+class MenuIndex extends ValueNotifier<int> {
+  MenuIndex(super.value);
+}
+
 class TemplateWidget extends StatefulWidget {
   const TemplateWidget({
     Key? key,
@@ -36,18 +40,6 @@ class _TemplateWidgetState extends State<TemplateWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
-      appBar: AppBar(
-        title: ValueListenableBuilder<int>(
-          valueListenable: menuIndex,
-          builder: (ctx, value, w) => Text(PageEnum.values[value].nome),
-        ),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.only(right: 15),
-            child: Icon(Icons.menu),
-          ),
-        ],
-      ),
       body: const RouterOutlet(),
       bottomNavigationBar: ValueListenableBuilder<int>(
         valueListenable: menuIndex,
@@ -56,7 +48,7 @@ class _TemplateWidgetState extends State<TemplateWidget> {
           onTap: (index) {
             menuIndex.value = index;
             if (index == PageEnum.home.index) {
-              Modular.to.navigate('/template/home_news/');
+              Modular.to.navigate('/template/home-news/');
             } else if (index == PageEnum.maps.index) {
               Modular.to.navigate('/template/rocket/rocket_maps/');
             } else if (index == PageEnum.configurations.index) {
@@ -67,8 +59,4 @@ class _TemplateWidgetState extends State<TemplateWidget> {
       ),
     );
   }
-}
-
-class MenuIndex extends ValueNotifier<int> {
-  MenuIndex(super.value);
 }

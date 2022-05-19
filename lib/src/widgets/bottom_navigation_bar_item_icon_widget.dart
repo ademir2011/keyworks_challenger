@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 
 class BottomNavigationBarItemIconWidget extends StatelessWidget {
   final bool isSelected;
+  final IconData icon;
   const BottomNavigationBarItemIconWidget({
     Key? key,
     this.isSelected = false,
+    required this.icon,
   }) : super(key: key);
 
   @override
@@ -18,9 +20,7 @@ class BottomNavigationBarItemIconWidget extends StatelessWidget {
             : Theme.of(context).colorScheme.onTertiary.withOpacity(.9),
         borderRadius: BorderRadius.circular(50),
       ),
-      child: const Icon(
-        Icons.home,
-      ),
+      child: Icon(icon),
     );
   }
 }
