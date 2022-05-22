@@ -22,6 +22,7 @@ class _AppWidgetState extends State<AppWidget> {
           tertiary: const Color(0xffE5E5E5),
           onTertiary: const Color(0xff5C5A5A),
           background: const Color(0xff000000),
+          onBackground: const Color(0xff171717),
         ),
         toggleableActiveColor: const Color(0xff8764B8),
         inputDecorationTheme: const InputDecorationTheme(

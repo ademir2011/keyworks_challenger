@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:keyworkds_challenger/src/widgets/sub_template_widget.dart';
-import 'package:keyworkds_challenger/src/widgets/template_widget.dart';
 
 class ConfigurationPage extends StatefulWidget {
   const ConfigurationPage({Key? key}) : super(key: key);
@@ -12,9 +10,10 @@ class ConfigurationPage extends StatefulWidget {
 
 enum MenuItemEnum {
   portugues,
-  ingles;
+  ingles,
+  espanhol;
 
-  final idiomas = const <String>['Português (Brasil)', 'Inglês'];
+  final idiomas = const <String>['Português (Brasil)', 'English', 'Español'];
 
   @override
   String toString() => idiomas[index];
@@ -24,8 +23,13 @@ class MenuItem extends ValueNotifier<MenuItemEnum> {
   MenuItem(super.value);
 }
 
+class SwitchButton extends ValueNotifier<bool> {
+  SwitchButton(super.value);
+}
+
 class _ConfigurationPageState extends State<ConfigurationPage> {
   final menuItem = MenuItem(MenuItemEnum.portugues);
+  final switchButton = SwitchButton(false);
   @override
   Widget build(BuildContext context) {
     return SubTemplateWidget(
@@ -53,7 +57,15 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                     'Tema Escuro',
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
-                  Switch(value: true, onChanged: (_) {})
+                  ValueListenableBuilder<bool>(
+                    valueListenable: switchButton,
+                    builder: (ctx, value, widget) {
+                      return Switch(
+                        value: value,
+                        onChanged: (newValue) => switchButton.value = newValue,
+                      );
+                    },
+                  ),
                 ],
               ),
               const SizedBox(height: 20),
@@ -79,12 +91,11 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                           child: DropdownButton<MenuItemEnum>(
                             value: menuItem.value,
                             onChanged: (newValue) {
-                              setState(() {
-                                menuItem.value = newValue ?? MenuItemEnum.portugues;
-                              });
+                              menuItem.value = newValue ?? MenuItemEnum.portugues;
                             },
-                            dropdownColor: Theme.of(context).cardColor,
+                            dropdownColor: Theme.of(context).colorScheme.onBackground,
                             underline: null,
+                            isDense: true,
                             items: MenuItemEnum.values
                                 .map<DropdownMenuItem<MenuItemEnum>>(
                                   (value) => DropdownMenuItem<MenuItemEnum>(

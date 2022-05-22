@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:keyworkds_challenger/src/news/presenter/widgets/launchs_list_widget.dart';
 import 'package:keyworkds_challenger/src/news/presenter/widgets/news_carrousel_widget.dart';
 import 'package:keyworkds_challenger/src/widgets/sub_template_widget.dart';
-import 'package:keyworkds_challenger/src/widgets/template_widget.dart';
 
 class HomeNewsPage extends StatefulWidget {
   const HomeNewsPage({Key? key}) : super(key: key);

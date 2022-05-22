@@ -16,8 +16,9 @@ class LaunchsListWidget extends StatelessWidget {
       child: ListView.builder(
         shrinkWrap: true,
         itemCount: 4,
+        padding: EdgeInsets.zero,
         itemBuilder: (ctx, index) {
-          return Container(
+          return Padding(
             padding: const EdgeInsets.all(12.5),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
