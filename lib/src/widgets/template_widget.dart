@@ -34,7 +34,7 @@ class TemplateWidget extends StatefulWidget {
 }
 
 class _TemplateWidgetState extends State<TemplateWidget> {
-  final menuIndex = MenuIndex(0);
+  final menuIndex = Modular.get<MenuIndex>();
 
   @override
   Widget build(BuildContext context) {

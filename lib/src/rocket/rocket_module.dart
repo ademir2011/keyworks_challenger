@@ -7,7 +7,6 @@ class RocketModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
-        // ChildRoute('/', child: (context, args) => const HomeNewsPage()),
         ChildRoute('/rocket_maps/', child: (context, args) => const RocketMapsPage()),
       ];
 }
